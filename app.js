@@ -44,7 +44,7 @@ app.put("/", upload.single("video"), async (req, res, next) => {
             console.log("conversion Done");
             const uploadParams = {
               Bucket: process.env.BUCKET_NAME,
-              Key: `public/videoClips/${name}`,
+              Key: `videoClips/${name}`,
               Body: "",
             };
             const file = path.join(__dirname, `new-${name}`);
