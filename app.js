@@ -29,7 +29,7 @@ app.put('/', upload.single('video'), async (req, res, next) => {
 
 			ffmpegCommand
 				.format('mp4')
-				.setStartTime(2) //Can be in "HH:MM:SS" format also
+				.setStartTime(req.body.startTime) //Can be in "HH:MM:SS" format also
 				.setDuration(3)
 				.on('start', function (commandLine) {
 					console.log('Spawned FFmpeg with command: ' + commandLine);
